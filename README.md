@@ -10,7 +10,7 @@ This is a python program that implements this application.
 
 $ python wallet.py
 
-# Different fuunctions in the program:
+# Different functions in the program:
 
 1. Reset: Specify the number of slots you have in your wallet and remove any previously saved cards. By default, the number of slots
 is set to 3.
