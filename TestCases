@@ -5,14 +5,14 @@ Test Case Id:1
 					Card_data ={ card_number,card_name,transaction_time}
 			   		Card_list= { card_number }
 			   		count=slot
-			   After:
+		   After:
 			   		Card_data ={ }
 			   		Card_list= { }
 			   		count=3
 			   	
 	Steps: 1.Run the program
-		   2.Choose Reset Option
-		   3.Enter the number of slots
+	       2.Choose Reset Option
+	       3.Enter the number of slots
 	Expected Results:
 		Wallet Reset
 	Actual Results:
@@ -26,14 +26,14 @@ Test Case Id:2
 					Card_data ={ card_number,card_name,transaction_time}
 			   		Card_list= { card_number }
 			   		card_cnt=number of cards before.
-			   After:
+		   After:
 			   		Card_data ={old cards + new card}
 			   		Card_list= { old cards +new card}
 			   		card_cnt=card_cnt+1
 			   	
-	Steps: 1.Run the program
-		   2.Choose Add new card Option
-		   3.Enter the card name.
+	Steps: 	1.Run the program
+		2.Choose Add new card Option
+		3.Enter the card name.
 	Expected Results:
 		New Card added.
 	Actual Results:
@@ -48,13 +48,13 @@ Test Case Id:3
 			   		Card_list= { card_number }
 			   		card_usage
 			   		transaction_time
-			   After:
+	           After:
 			   		card_usage=card_usage+1
 			   		update transaction_time
 			   	
-	Steps: 1.Run the program
-		   2.Choose Use existing card Option
-		   3.Enter the unqiue number of card
+	Steps:  1.Run the program
+		2.Choose Use existing card Option
+		3.Enter the unqiue number of card
 	Expected Results:
 		Card used.
 	Actual Results:
@@ -69,8 +69,8 @@ Test Case Id:4
 			   	Card_list= { card_number }
 			   	if wallet is empty the shows no cards in wallet
 			   	
-	Steps: 1.Run the program
-		   2.Choose Show Option
+	Steps:  1.Run the program
+		2.Choose Show Option
 		   
 	Expected Results:
 		Displays the cards in wallet
@@ -85,7 +85,7 @@ Test Case Id:5
 					Card_data ={ card_number,card_name,transaction_time}
 			   		Card_list= { card_number }
 			   		count=slot
-			   After:
+		   After:
 			   		Card_data ={ card_number,card_name,transaction_time }
 			   		Card_list= { sorted card_number }
 			   		
@@ -103,9 +103,9 @@ Test Case Id:6
 	Test Data: 
 			card_name
 			   
-	Steps: 1. Run the program
-		   2. Choose add a new card option
-		   3. Enter the Card_name
+	Steps:  1. Run the program
+		2. Choose add a new card option
+		3. Enter the Card_name
 				
 	Expected Results:
 		if card_name is string, card accepted.
