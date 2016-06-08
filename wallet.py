@@ -101,10 +101,13 @@ class wallet:
 	def show(self):
 		
 		op = self.card_list[::-1]
-		k = 1
-		for i in op:
-			print ('%d. %s (Card-id: %d)'% (k,self.card_data[i].card_name,self.card_data[i].card_no))
-			k += 1
+		if not op:
+			print "No cards in wallet\n"
+		else:
+			k = 1
+			for i in op:
+				print ('%d. %s (Card-id: %d)'% (k,self.card_data[i].card_name,self.card_data[i].card_no))
+				k += 1
 
 def main():
 	print "Default number of slots is 3\n"
@@ -113,14 +116,14 @@ def main():
 		
 		op = raw_input("1) Reset \n2) Add a new card \n3) Use existing card \n4) Show cards for wallet\nEnter your choice(^C to exit) ->>")
 		if(op == '1'):
-			cnt = raw_input("enter the slot :")
+			cnt = raw_input("Enter the slot :")
 			if(cnt == 'null'):
 				cnt = 3
 			w.reset(int(cnt))
 		
 		elif(op == '2'):
 			
-			name = raw_input("enter the Card Name :")
+			name = raw_input("Enter the Card Name :")
 			
 			no = w.cur_unique_number
 			w.cur_unique_number += 1
@@ -137,7 +140,7 @@ def main():
 			
 		
 		elif(op == '3'):
-			no = raw_input("enter the card number to use :")
+			no = raw_input("Enter the card number to use :")
 			w.use(int(no))
 		elif(op == '4'):
 			w.show()
