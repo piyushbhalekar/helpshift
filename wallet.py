@@ -136,11 +136,12 @@ def main():
 			
 			name = raw_input("Enter the Card Name :")
 			
-			no = w.cur_unique_number
-			w.cur_unique_number += 1
+
 			
 			try:
 				if name.isalpha():
+					no = w.cur_unique_number
+					w.cur_unique_number += 1
 					w.add(int(no),name)
 					print 'Unique ID of {0} is {1}'.format(name, no)
 				else:
