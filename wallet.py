@@ -92,17 +92,12 @@ class wallet:
 			if not self.card_list:
 				print "Wallet is empty"
 			else:
-			
-		
-				for data in self.card_list:
-					if self.card_list[data]==card_no:
-		
-						self.card_data[card_no].card_usage += 1
-						if(self.card_data[card_no].card_usage > self.max_usage):
-							self.max_usage = int(self.card_data[card_no].card_usage)
-						self.card_data[card_no].transaction_time = time.asctime( time.localtime(time.time()))
-						self.sort()
-						return
+					self.card_data[card_no].card_usage += 1
+					if(self.card_data[card_no].card_usage > self.max_usage):
+						self.max_usage = int(self.card_data[card_no].card_usage)
+					self.card_data[card_no].transaction_time = time.asctime( time.localtime(time.time()))
+					self.sort()
+					return
 		except:
 		
 			print "card is not present"
