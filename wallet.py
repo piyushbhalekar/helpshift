@@ -130,9 +130,12 @@ def main():
 		op = raw_input("1) Reset \n2) Add a new card \n3) Use existing card \n4) Show cards for wallet\nEnter your choice(^C to exit) ->>")
 		if(op == '1'):
 			cnt = raw_input("Enter the slot :")
-			if(cnt == 'null'):
-				cnt = 3
-			w.reset(int(cnt))
+			if cnt.isdigit():
+				if(cnt == 'null'):
+					cnt = 3
+				w.reset(int(cnt))
+			else:
+				print "Enter valid number"
 		
 		elif(op == '2'):
 			
