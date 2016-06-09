@@ -88,11 +88,20 @@ class wallet:
 	'''	
 			
 	def use(self,card_no):
-		self.card_data[card_no].card_usage += 1
-		if(self.card_data[card_no].card_usage > self.max_usage):
-			self.max_usage = int(self.card_data[card_no].card_usage)
-		self.card_data[card_no].transaction_time = time.asctime( time.localtime(time.time()))
-		self.sort()
+		try:
+		
+			for data in self.card_list:
+				if self.card_list[data]==card_no:
+		
+					self.card_data[card_no].card_usage += 1
+					if(self.card_data[card_no].card_usage > self.max_usage):
+						self.max_usage = int(self.card_data[card_no].card_usage)
+					self.card_data[card_no].transaction_time = time.asctime( time.localtime(time.time()))
+					self.sort()
+					return
+		except:
+		
+			print "card is not present"
 		
 	'''
 	show(): show existing cards in wallet
@@ -141,7 +150,10 @@ def main():
 		
 		elif(op == '3'):
 			no = raw_input("Enter the card number to use :")
-			w.use(int(no))
+			if no.isdigit():
+				w.use(int(no))
+			else:
+				print "Enter unique card number"
 		elif(op == '4'):
 			w.show()
 
