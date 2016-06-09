@@ -32,6 +32,7 @@ class wallet:
 		self.card_data.clear()
 		self.card_list = list()
 		self.count = int(cnt)
+		self.cur_unique_number = 1
 		
 	'''
 	add(): Adds a new card
