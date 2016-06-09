@@ -13,7 +13,7 @@ class Card:
 class wallet:
 	max_usage = 1
 	count = 3
-	card_cnt = 0
+	card_cnt = 1
 	cur_unique_number = 1
 	
 	'''
@@ -33,6 +33,7 @@ class wallet:
 		self.card_list = list()
 		self.count = int(cnt)
 		self.cur_unique_number = 1
+		self.card_cnt=1
 		
 	'''
 	add(): Adds a new card
@@ -43,7 +44,7 @@ class wallet:
 	def add(self,card_no,card_name):
 		
 		card_new = Card(card_no,card_name,time.asctime( time.localtime(time.time())))
-		if(self.card_cnt < self.count):
+		if(self.card_cnt <= self.count):
 			
 			self.card_data[card_new.card_no] = card_new
 			self.sort()
